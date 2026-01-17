@@ -28,7 +28,7 @@ const Navbar = () => {
   <img
     src={logo}
     alt="Currency Logo"
-    className="h-16 md:h-20 object-contain"
+    className="h-20 md:h-20 object-contain"
   />
 </Link>
 
