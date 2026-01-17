@@ -20,7 +20,7 @@ const About = () => {
             className="max-w-4xl mx-auto text-center"
           >
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              About <span className="text-gradient">Premium</span>
+              About <span className="text-gradient">currency</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               A legacy of excellence, innovation, and unwavering commitment to quality.
@@ -38,7 +38,7 @@ const About = () => {
                 Our <span className="text-gradient">Story</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Founded in 2014, Premium began with a simple vision: to deliver products and services 
+                Founded in 2014, currency began with a simple vision: to deliver products and services 
                 that exceed expectations. What started as a small team of passionate individuals has 
                 grown into a leading force in our industry.
               </p>
@@ -48,7 +48,7 @@ const About = () => {
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Today, we serve clients worldwide, helping them achieve their goals with our 
-                comprehensive suite of premium solutions.
+                comprehensive suite of currency solutions.
               </p>
             </SlideInSection>
 
@@ -112,7 +112,7 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-display font-semibold mb-4">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  To be the global leader in premium solutions, recognized for our innovation, 
+                  To be the global leader in currency solutions, recognized for our innovation, 
                   excellence, and the lasting impact we create for our clients and communities.
                 </p>
               </div>

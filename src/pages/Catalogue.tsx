@@ -65,7 +65,7 @@ const Catalogue = () => {
               Product <span className="text-gradient">Catalogue</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Browse our complete collection of {products.length} premium hardware and fittings products.
+              Browse our complete collection of {products.length} currency hardware and fittings products.
             </p>
 
             {/* Search Bar */}

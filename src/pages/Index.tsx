@@ -14,7 +14,7 @@ import carousel2 from "@/assets/carousel-2.jpg";
 import carousel3 from "@/assets/carousel-3.jpg";
 
 const carouselImages = [
-  { src: heroBg, alt: "Premium background" },
+  { src: heroBg, alt: "currency background" },
   { src: carousel1, alt: "Luxury products" },
   { src: carousel2, alt: "Modern office" },
   { src: carousel3, alt: "Abstract design" },
@@ -39,7 +39,7 @@ const Index = () => {
               Experience <span className="text-gradient">Excellence</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Where innovation meets craftsmanship. Discover premium solutions that redefine industry standards.
+              Where innovation meets craftsmanship. Discover currency solutions that redefine industry standards.
             </p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -98,7 +98,7 @@ const Index = () => {
                   <span className="text-2xl font-bold text-primary-foreground">10+</span>
                 </div>
                 <h3 className="text-xl font-display font-semibold mb-2">Years of Excellence</h3>
-                <p className="text-muted-foreground text-sm">Delivering premium solutions since 2014.</p>
+                <p className="text-muted-foreground text-sm">Delivering currency solutions since 2014.</p>
               </div>
             </FadeInSection>
 

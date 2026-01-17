@@ -30,7 +30,7 @@ const employees = [
     name: "Emma Rodriguez",
     role: "Creative Director",
     image: employee3,
-    bio: "Crafting the visual identity that defines our premium brand experience.",
+    bio: "Crafting the visual identity that defines our currency brand experience.",
   },
   {
     id: 4,
@@ -131,7 +131,7 @@ const Employees = () => {
               If you think you'd be a great fit, we'd love to hear from you.
             </p>
             <a
-              href="mailto:careers@premium.com"
+              href="mailto:careers@currency.com"
               className="inline-block px-8 py-4 bg-gradient-primary text-primary-foreground font-semibold rounded-lg hover:shadow-glow transition-all duration-300"
             >
               View Open Positions

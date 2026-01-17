@@ -25,7 +25,7 @@ const Owner = () => {
               Meet the <span className="text-gradient">Founder</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              The visionary behind Premium's success story.
+              The visionary behind currency's success story.
             </p>
           </motion.div>
         </div>
@@ -59,7 +59,7 @@ const Owner = () => {
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    With over 20 years of experience in the industry, James Richardson founded Premium 
+                    With over 20 years of experience in the industry, James Richardson founded currency 
                     with a singular vision: to create products and services that stand the test of time.
                   </p>
                   <p>
@@ -68,12 +68,12 @@ const Owner = () => {
                     his passion for excellence.
                   </p>
                   <p>
-                    Under James's leadership, Premium has grown from a local business to an internationally 
+                    Under James's leadership, currency has grown from a local business to an internationally 
                     recognized brand, serving clients across five continents. His philosophy is simple: 
                     never compromise on quality, and always put the client first.
                   </p>
                   <p>
-                    When not at the helm of Premium, James is an avid mentor to young entrepreneurs 
+                    When not at the helm of currency, James is an avid mentor to young entrepreneurs 
                     and speaks at industry conferences worldwide about innovation and sustainable business practices.
                   </p>
                 </div>
@@ -98,7 +98,7 @@ const Owner = () => {
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    href="mailto:james@premium.com"
+                    href="mailto:james@currency.com"
                     className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200"
                   >
                     <Mail className="w-5 h-5 text-foreground" />

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-display font-bold text-gradient mb-4">PREMIUM</h3>
+            <h3 className="text-xl font-display font-bold text-gradient mb-4">currency</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Delivering excellence through innovation and dedication.
             </p>
@@ -37,7 +37,7 @@ const Footer = () => {
               Contact
             </h4>
             <p className="text-muted-foreground text-sm">
-              info@premium.com
+              info@currency.com
             </p>
             <p className="text-muted-foreground text-sm mt-1">
               +1 (555) 123-4567
@@ -47,7 +47,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Premium. All rights reserved.
+            © {new Date().getFullYear()} currency. All rights reserved.
           </p>
         </div>
       </div>
