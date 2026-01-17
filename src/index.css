@@ -1,9 +1,12 @@
+/* 1️⃣ IMPORTS MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+/* 2️⃣ TAILWIND DIRECTIVES */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
+/* 3️⃣ BASE THEME TOKENS */
 @layer base {
   :root {
     --background: 0 0% 4%;
@@ -50,6 +53,7 @@
   }
 }
 
+/* 4️⃣ GLOBAL BASE STYLES */
 @layer base {
   * {
     @apply border-border;
@@ -69,6 +73,7 @@
   }
 }
 
+/* 5️⃣ UTILITIES */
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
