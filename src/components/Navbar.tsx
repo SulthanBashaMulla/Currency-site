@@ -20,15 +20,15 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+<nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 relative">
+<div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
           <div className="w-12" />
           
-<Link to="/" className="absolute left-1/2 -translate-x-1/2">
+<Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
   <img
     src={logo}
     alt="Currency Logo"
-    className="h-8 md:h-10 object-contain"
+    className="h-12 md:h-16 object-contain"
   />
 </Link>
 
