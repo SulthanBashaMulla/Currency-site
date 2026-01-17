@@ -25,7 +25,7 @@ const Navbar = () => {
           
           <Link to="/" className="absolute left-1/2 -translate-x-1/2">
             <h1 className="text-xl md:text-2xl font-display font-bold tracking-wide">
-              <span className="text-gradient">currency</span>
+              <span className="text-gradient">CurrencY</span>
             </h1>
           </Link>
 
