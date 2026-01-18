@@ -1,18 +1,24 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Package, X } from "lucide-react";
+import { Search, Package, X, Filter, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { FadeInSection } from "@/components/AnimatedSections";
 import PageTransition from "@/components/PageTransition";
 import { Input } from "@/components/ui/input";
-import { products, categories, type Product } from "@/data/products";
+import { products, categories, categoryImages, type Product } from "@/data/products";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuCheckboxItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Catalogue = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
-  // Filter products based on search and category
+  // Filter products based on search and categories
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       const matchesSearch =
@@ -22,11 +28,11 @@ const Catalogue = () => {
         product.category.toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesCategory =
-        selectedCategory === null || product.category === selectedCategory;
+        selectedCategories.length === 0 || selectedCategories.includes(product.category);
 
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [searchQuery, selectedCategories]);
 
   // Group products by category
   const groupedProducts = useMemo(() => {
@@ -48,6 +54,18 @@ const Catalogue = () => {
     return counts;
   }, []);
 
+  const toggleCategory = (category: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((c) => c !== category)
+        : [...prev, category]
+    );
+  };
+
+  const getProductImage = (category: string): string => {
+    return categoryImages[category] || categoryImages["Miscellaneous"];
+  };
+
   return (
     <PageTransition>
       <Navbar />
@@ -65,66 +83,118 @@ const Catalogue = () => {
               Product <span className="text-gradient">Catalogue</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
-              Browse our complete collection of {products.length} currency hardware and fittings products.
+              Browse our complete collection of {products.length} premium hardware and fittings products.
             </p>
 
-            {/* Search Bar */}
-            <div className="relative max-w-xl mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="Search by name, code, or category..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-12 py-6 text-lg bg-card border-border rounded-xl focus:border-primary/50 focus:ring-primary/20"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-secondary rounded-full transition-colors"
+            {/* Search and Filter Row */}
+            <div className="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
+              {/* Search Bar */}
+              <div className="relative flex-1">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search by name, code, or category..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-12 pr-12 py-6 text-lg bg-card border-border rounded-xl focus:border-primary/50 focus:ring-primary/20"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-1 hover:bg-secondary rounded-full transition-colors"
+                  >
+                    <X className="h-5 w-5 text-muted-foreground" />
+                  </button>
+                )}
+              </div>
+
+              {/* Filter Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="flex items-center justify-center gap-2 px-6 py-3 bg-card border border-border rounded-xl text-foreground hover:border-primary/50 transition-all min-w-[140px]">
+                    <Filter className="w-5 h-5" />
+                    <span>Filter</span>
+                    {selectedCategories.length > 0 && (
+                      <span className="bg-primary text-primary-foreground text-xs px-2 py-0.5 rounded-full">
+                        {selectedCategories.length}
+                      </span>
+                    )}
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                  align="end" 
+                  className="w-72 bg-card border-border z-50"
+                  sideOffset={8}
                 >
-                  <X className="h-5 w-5 text-muted-foreground" />
-                </button>
-              )}
+                  <div className="p-3 border-b border-border">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-medium text-foreground">Categories</span>
+                      {selectedCategories.length > 0 && (
+                        <button 
+                          onClick={() => setSelectedCategories([])} 
+                          className="text-xs text-primary hover:text-primary/80 transition-colors"
+                        >
+                          Clear all
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  {categories.map((category) => (
+                    <DropdownMenuCheckboxItem
+                      key={category}
+                      checked={selectedCategories.includes(category)}
+                      onCheckedChange={() => toggleCategory(category)}
+                      className="cursor-pointer"
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <span>{category}</span>
+                        <span className="text-xs text-muted-foreground ml-2">
+                          ({categoryCount[category] || 0})
+                        </span>
+                      </div>
+                    </DropdownMenuCheckboxItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-6 border-b border-border bg-background/50 backdrop-blur-sm sticky top-16 z-40">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap gap-2 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory(null)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedCategory === null
-                  ? "bg-gradient-primary text-primary-foreground shadow-glow"
-                  : "bg-secondary text-foreground hover:bg-secondary/80"
-              }`}
-            >
-              All ({products.length})
-            </motion.button>
-            {categories.map((category) => (
-              <motion.button
-                key={category}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-gradient-primary text-primary-foreground shadow-glow"
-                    : "bg-secondary text-foreground hover:bg-secondary/80"
-                }`}
+      {/* Active Filters Display */}
+      {selectedCategories.length > 0 && (
+        <section className="py-4 border-b border-border bg-background/50 backdrop-blur-sm sticky top-16 z-40">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap gap-2 items-center justify-center">
+              <span className="text-sm text-muted-foreground mr-2">Active filters:</span>
+              {selectedCategories.map((category) => (
+                <motion.span
+                  key={category}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                >
+                  {category}
+                  <button
+                    onClick={() => toggleCategory(category)}
+                    className="hover:bg-primary/20 rounded-full p-0.5 transition-colors"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </motion.span>
+              ))}
+              <button
+                onClick={() => setSelectedCategories([])}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors ml-2"
               >
-                {category} ({categoryCount[category] || 0})
-              </motion.button>
-            ))}
+                Clear all
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Products Grid */}
       <section className="py-12 md:py-20">
@@ -134,16 +204,14 @@ const Catalogue = () => {
             <p className="text-muted-foreground">
               Showing <span className="text-primary font-semibold">{filteredProducts.length}</span> of{" "}
               <span className="font-semibold">{products.length}</span> products
-              {selectedCategory && (
+              {selectedCategories.length > 0 && (
                 <span>
-                  {" "}
-                  in <span className="text-primary font-semibold">{selectedCategory}</span>
+                  {" "}in <span className="text-primary font-semibold">{selectedCategories.length} categories</span>
                 </span>
               )}
               {searchQuery && (
                 <span>
-                  {" "}
-                  matching "<span className="text-primary font-semibold">{searchQuery}</span>"
+                  {" "}matching "<span className="text-primary font-semibold">{searchQuery}</span>"
                 </span>
               )}
             </p>
@@ -168,7 +236,7 @@ const Catalogue = () => {
                 <button
                   onClick={() => {
                     setSearchQuery("");
-                    setSelectedCategory(null);
+                    setSelectedCategories([]);
                   }}
                   className="px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg hover:shadow-glow transition-all duration-300"
                 >
@@ -203,18 +271,30 @@ const Catalogue = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9 }}
                             transition={{ duration: 0.3, delay: index * 0.02 }}
-                            whileHover={{ y: -4, scale: 1.02 }}
-                            className="group bg-card border border-border rounded-xl p-4 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+                            whileHover={{ y: -4 }}
+                            className="group bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 hover:shadow-lg transition-all duration-300"
                           >
-                            <div className="flex flex-col h-full">
-                              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-200 mb-2">
+                            {/* Product Image */}
+                            <div className="relative h-40 overflow-hidden bg-secondary/30">
+                              <img
+                                src={getProductImage(product.category)}
+                                alt={product.name}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                              />
+                              <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
+                              <span className="absolute bottom-2 left-2 text-xs bg-primary/90 text-primary-foreground px-2 py-1 rounded">
+                                {product.category.split(' ')[0]}
+                              </span>
+                            </div>
+                            
+                            {/* Product Info */}
+                            <div className="p-4">
+                              <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors duration-200 mb-2 line-clamp-2">
                                 {product.name}
                               </h3>
-                              <div className="mt-auto">
-                                <p className="text-xs font-mono text-muted-foreground bg-secondary/50 px-2 py-1 rounded inline-block">
-                                  {product.code}
-                                </p>
-                              </div>
+                              <p className="text-xs font-mono text-muted-foreground bg-secondary/50 px-2 py-1 rounded inline-block">
+                                {product.code}
+                              </p>
                             </div>
                           </motion.div>
                         ))}
