@@ -20,7 +20,7 @@ const Contact = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-              Get in <span className="text-gradient">Touch</span>
+              Get  <span className="text-gradient">Assistance</span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Have questions or need assistance? We're here to help. Reach out to us and our team will get back to you promptly.
