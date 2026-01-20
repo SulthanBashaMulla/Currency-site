@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroCarousel from "@/components/HeroCarousel";
 import ContactForm from "@/components/ContactForm";
+import WhatsAppSection from "@/components/WhatsAppSection";
 import { FadeInSection } from "@/components/AnimatedSections";
 import PageTransition from "@/components/PageTransition";
 
@@ -14,7 +15,7 @@ import carousel2 from "@/assets/carousel-2.jpg";
 import carousel3 from "@/assets/carousel-3.jpg";
 
 const carouselImages = [
-  { src: heroBg, alt: "currency background" },
+  { src: heroBg, alt: "Premium background" },
   { src: carousel1, alt: "Luxury products" },
   { src: carousel2, alt: "Modern office" },
   { src: carousel3, alt: "Abstract design" },
@@ -39,7 +40,7 @@ const Index = () => {
               Experience <span className="text-gradient">Excellence</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Where innovation meets craftsmanship. Discover currency solutions that redefine industry standards.
+              Where innovation meets craftsmanship. Discover premium solutions that redefine industry standards.
             </p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -98,7 +99,7 @@ const Index = () => {
                   <span className="text-2xl font-bold text-primary-foreground">10+</span>
                 </div>
                 <h3 className="text-xl font-display font-semibold mb-2">Years of Excellence</h3>
-                <p className="text-muted-foreground text-sm">Delivering currency solutions since 2014.</p>
+                <p className="text-muted-foreground text-sm">Delivering premium solutions since 2014.</p>
               </div>
             </FadeInSection>
 
@@ -124,6 +125,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* WhatsApp Section */}
+      <WhatsAppSection chatLink="https://wa.me/1234567890" />
 
       {/* Contact Section */}
       <ContactForm />

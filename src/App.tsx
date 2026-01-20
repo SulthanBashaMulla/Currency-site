@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Catalogue from "./pages/Catalogue";
 import Owner from "./pages/Owner";
 import Employees from "./pages/Employees";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/catalogue" element={<Catalogue />} />
             <Route path="/owner" element={<Owner />} />
             <Route path="/employees" element={<Employees />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>

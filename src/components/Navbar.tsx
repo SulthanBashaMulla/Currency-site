@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -10,6 +9,7 @@ const navLinks = [
   { name: "Catalogue", path: "/catalogue" },
   { name: "Owner", path: "/owner" },
   { name: "Employees", path: "/employees" },
+  { name: "Contact Us", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -20,17 +20,15 @@ const Navbar = () => {
 
   return (
     <>
-<nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 relative">
-<div className="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="w-12" />
           
-<Link to="/" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-  <img
-    src={logo}
-    alt="Currency Logo"
-    className="h-20 md:h-20 object-contain"
-  />
-</Link>
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2">
+            <h1 className="text-xl md:text-2xl font-display font-bold tracking-wide">
+              <span className="text-gradient">PREMIUM</span>
+            </h1>
+          </Link>
 
           <button
             onClick={toggleMenu}
