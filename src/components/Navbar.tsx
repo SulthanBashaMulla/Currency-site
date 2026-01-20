@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -24,11 +25,13 @@ const Navbar = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="w-12" />
           
-          <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-            <h1 className="text-xl md:text-2xl font-display font-bold tracking-wide">
-              <span className="text-gradient">PREMIUM</span>
-            </h1>
-          </Link>
+<Link to="/" className="absolute left-1/2 -translate-x-1/2">
+  <img
+    src={logo}
+    alt="Logo"
+    className="h-8 md:h-10 object-contain"
+  />
+</Link>
 
           <button
             onClick={toggleMenu}
