@@ -49,7 +49,7 @@ const Footer = () => {
 <p className="text-muted-foreground text-sm">
   Made by{" "}
   <a
-    href="https://your-website-link.com"
+    href="wybzite.vercel.app"
     target="_blank"
     rel="noopener noreferrer"
     className="text-[#F2A23A] hover:underline hover:opacity-80 font-medium"
