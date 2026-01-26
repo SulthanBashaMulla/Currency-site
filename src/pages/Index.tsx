@@ -127,7 +127,7 @@ const Index = () => {
       </section>
 
       {/* WhatsApp Section */}
-      <WhatsAppSection chatLink="https://wa.me/1234567890" />
+      <WhatsAppSection chatLink="https://wa.me/8595507825" />
 
       {/* Contact Section */}
       <ContactForm />
