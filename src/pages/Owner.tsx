@@ -68,7 +68,7 @@ const Owner = () => {
                     his passion for excellence.
                   </p>
                   <p>
-                    Under Inderjeet's leadership, currency has grown from a local business to an internationally 
+                    Under Inderjeet'sleadership, currency has grown from a local business to an internationally 
                     recognized brand, serving clients across five continents. His philosophy is simple: 
                     never compromise on quality, and always put the client first.
                   </p>
