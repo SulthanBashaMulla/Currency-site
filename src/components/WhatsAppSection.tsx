@@ -5,7 +5,7 @@ interface WhatsAppSectionProps {
   chatLink?: string;
 }
 
-const WhatsAppSection = ({ chatLink = "https://wa.me/1234567890" }: WhatsAppSectionProps) => {
+const WhatsAppSection = ({ chatLink = "https://wa.me/8595507825" }: WhatsAppSectionProps) => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
