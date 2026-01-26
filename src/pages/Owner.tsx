@@ -5,7 +5,6 @@ import { FadeInSection, SlideInSection } from "@/components/AnimatedSections";
 import PageTransition from "@/components/PageTransition";
 import { Linkedin, Twitter, Mail } from "lucide-react";
 
-import ownerImage from "@/assets/owner.jpg";
 
 const Owner = () => {
   return (
@@ -40,7 +39,7 @@ const Owner = () => {
                 <div className="absolute inset-0 bg-gradient-primary opacity-20 rounded-2xl blur-3xl transform translate-x-4 translate-y-4" />
                 <div className="relative overflow-hidden rounded-2xl border border-border">
                   <img
-                    src={ownerImage}
+                    src="https://i.postimg.cc/7LkvD94h/IMG-20251215-WA0074.jpg"
                     alt="INDERJEET SINGH - Founder"
                     className="w-full aspect-[4/5] object-cover"
                   />
