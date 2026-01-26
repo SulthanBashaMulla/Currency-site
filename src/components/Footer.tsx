@@ -55,7 +55,7 @@ const Footer = () => {
     className="text-[#F2A23A] hover:underline hover:opacity-80 font-medium"
   >
     Wybzite
-  </a>
+  </a> 🧭
 </p>
         </div>
       </div>
