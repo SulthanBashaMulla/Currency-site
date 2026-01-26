@@ -102,7 +102,7 @@ const Owner = () => {
               better than we were yesterday, for our clients, our team, and ourselves."
             </blockquote>
             <cite className="block mt-6 text-primary font-semibold not-italic">
-              — James Richardson
+              — Inderjeet Singh
             </cite>
           </FadeInSection>
         </div>
