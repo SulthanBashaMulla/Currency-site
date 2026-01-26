@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-display font-bold text-gradient mb-4">currency</h3>
+            <h3 className="text-xl font-display font-bold text-gradient mb-4">CurrencY</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Delivering excellence through innovation and dedication.
             </p>
@@ -26,9 +26,6 @@ const Footer = () => {
               <Link to="/owner" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                 Owner
               </Link>
-              <Link to="/employees" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                Our Team
-              </Link>
             </nav>
           </div>
 
@@ -37,18 +34,29 @@ const Footer = () => {
               Contact
             </h4>
             <p className="text-muted-foreground text-sm">
-              info@currency.com
+              Currencyinternational321@gmail.com
             </p>
             <p className="text-muted-foreground text-sm mt-1">
-              +1 (555) 123-4567
+              +91 8595507825
             </p>
           </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} currency. All rights reserved.
+            © {new Date().getFullYear()} CurrencY. All rights reserved.
           </p>
+<p className="text-muted-foreground text-sm">
+  Made by{" "}
+  <a
+    href="https://your-website-link.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#F2A23A] hover:underline hover:opacity-80 font-medium"
+  >
+    Wybzite
+  </a>
+</p>
         </div>
       </div>
     </footer>

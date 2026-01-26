@@ -41,7 +41,7 @@ const Owner = () => {
                 <div className="relative overflow-hidden rounded-2xl border border-border">
                   <img
                     src={ownerImage}
-                    alt="James Richardson - Founder & CEO"
+                    alt="INDERJEET SINGH - Founder"
                     className="w-full aspect-[4/5] object-cover"
                   />
                 </div>
@@ -52,14 +52,14 @@ const Owner = () => {
               <div className="space-y-6">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-display font-bold mb-2">
-                    James Richardson
+                    INDERJEET SINGH
                   </h2>
                   <p className="text-primary text-lg font-medium">Founder & CEO</p>
                 </div>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    With over 20 years of experience in the industry, James Richardson founded currency 
+                    With over 25+ years of experience in the industry, INDERJEET Singh founded currency 
                     with a singular vision: to create products and services that stand the test of time.
                   </p>
                   <p>
@@ -68,7 +68,7 @@ const Owner = () => {
                     his passion for excellence.
                   </p>
                   <p>
-                    Under James's leadership, currency has grown from a local business to an internationally 
+                    Under Inderjeet's leadership, currency has grown from a local business to an internationally 
                     recognized brand, serving clients across five continents. His philosophy is simple: 
                     never compromise on quality, and always put the client first.
                   </p>
@@ -82,23 +82,7 @@ const Owner = () => {
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    href="#"
-                    className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200"
-                  >
-                    <Linkedin className="w-5 h-5 text-foreground" />
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="#"
-                    className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200"
-                  >
-                    <Twitter className="w-5 h-5 text-foreground" />
-                  </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    href="mailto:james@currency.com"
+                    href="mailto:Currencyinternational321@gmail.com"
                     className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-200"
                   >
                     <Mail className="w-5 h-5 text-foreground" />

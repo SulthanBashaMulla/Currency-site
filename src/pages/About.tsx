@@ -38,7 +38,8 @@ const About = () => {
                 Our <span className="text-gradient">Story</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Founded in 2014, currency began with a simple vision: to deliver products and services 
+                The Brand Itself CurrencY Exist from us Since 2001. An Official store
+                Founded in 2006, currency began with a simple vision: to deliver products and services 
                 that exceed expectations. What started as a small team of passionate individuals has 
                 grown into a leading force in our industry.
               </p>
@@ -58,16 +59,12 @@ const About = () => {
                 <div className="relative bg-card border border-border rounded-2xl p-8 md:p-12">
                   <div className="grid grid-cols-2 gap-6">
                     <div className="text-center">
-                      <span className="text-4xl md:text-5xl font-display font-bold text-gradient">10+</span>
+                      <span className="text-4xl md:text-5xl font-display font-bold text-gradient">25+</span>
                       <p className="text-muted-foreground text-sm mt-2">Years Experience</p>
                     </div>
                     <div className="text-center">
-                      <span className="text-4xl md:text-5xl font-display font-bold text-gradient">500+</span>
+                      <span className="text-4xl md:text-5xl font-display font-bold text-gradient">100+</span>
                       <p className="text-muted-foreground text-sm mt-2">Clients Served</p>
-                    </div>
-                    <div className="text-center">
-                      <span className="text-4xl md:text-5xl font-display font-bold text-gradient">50+</span>
-                      <p className="text-muted-foreground text-sm mt-2">Team Members</p>
                     </div>
                     <div className="text-center">
                       <span className="text-4xl md:text-5xl font-display font-bold text-gradient">99%</span>

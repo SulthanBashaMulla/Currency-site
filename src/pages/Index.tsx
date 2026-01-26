@@ -96,7 +96,7 @@ const Index = () => {
             <FadeInSection delay={0.1}>
               <div className="p-8 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors duration-300">
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-primary-foreground">10+</span>
+                  <span className="text-2xl font-bold text-primary-foreground">25+</span>
                 </div>
                 <h3 className="text-xl font-display font-semibold mb-2">Years of Excellence</h3>
                 <p className="text-muted-foreground text-sm">Delivering premium solutions since 2014.</p>
@@ -106,7 +106,7 @@ const Index = () => {
             <FadeInSection delay={0.2}>
               <div className="p-8 bg-card rounded-xl border border-border hover:border-primary/50 transition-colors duration-300">
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-primary-foreground">500+</span>
+                  <span className="text-2xl font-bold text-primary-foreground">100+</span>
                 </div>
                 <h3 className="text-xl font-display font-semibold mb-2">Happy Clients</h3>
                 <p className="text-muted-foreground text-sm">Trusted by leading businesses globally.</p>

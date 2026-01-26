@@ -17,7 +17,7 @@ const ContactForm = () => {
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     );
     
-    window.location.href = `mailto:info@currency.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:Currencyinternational321@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
