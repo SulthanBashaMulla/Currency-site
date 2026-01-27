@@ -30,7 +30,7 @@ const Contact = () => {
       </section>
 
       {/* WhatsApp Section */}
-      <WhatsAppSection chatLink="https://wa.me/1234567890" />
+      <WhatsAppSection chatLink="https://wa.me/+918595507825" />
 
       {/* Contact Form Section */}
       <ContactForm />
